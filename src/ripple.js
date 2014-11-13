@@ -4,7 +4,7 @@
         var self = this;
 
         self.defaults = {
-            opacity: 0.5,
+            opacity: 0.4,
             color: "auto"
         };
 
