@@ -1,0 +1,21 @@
+{
+    "name": "Ripple.js",
+    "author": "Jacob Kelley",
+    "version": "1.0.0",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/jakiestfu/Ripple.js.git"
+    },
+    "scripts": {
+        "build": "./node_modules/grunt-cli/bin/grunt",
+        "build-watch": "./node_modules/grunt-cli/bin/grunt develop"
+    },
+    "devDependencies": {
+        "grunt": "~0.4.1",
+        "grunt-cli": "~0.1.9",
+        "grunt-contrib-watch": "~0.5.3",
+        "grunt-contrib-uglify": "0.2.5",
+        "grunt-contrib-jshint": "0.8.0",
+        "grunt-contrib-cssmin": "0.10.0"
+    }
+}

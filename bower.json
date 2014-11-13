@@ -1,0 +1,6 @@
+{
+	"name": "Ripple.js",
+	"author": "Jacob Kelley",
+	"version": "1.0.0",
+	"main": "dist/ripple.min.js"
+}
