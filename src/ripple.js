@@ -79,8 +79,6 @@
                 top: y + 'px',
                 left: x + 'px'
             }).addClass("animate");
-
-            console.log($ripple.css('animation-timing-function'));
         });
     };
 })(jQuery);
