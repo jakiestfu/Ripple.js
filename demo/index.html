@@ -11,19 +11,17 @@
 		<link rel="stylesheet" type="text/css" href="../dist/ripple.min.css">
 
 		<style type="text/css">
-			html, body {
-				height: 100%;
-				overflow: hidden;
-			}
+
+			/* 100% of the styles below are simply for the demo */
 			body {
 				background: #fefefe;
 				color: #2a2a2a;
 				font-family: 'Open Sans', sans-serif;
 			}
-			h1 {
+			header h1 {
 				opacity: 0.7;
 				font-weight: 800;
-				margin-top: 0;
+				margin-top: 100px;
 			}
 			.btn {
 				border: none;
@@ -37,34 +35,63 @@
 			.white .btn-warning { color: #f0ad4e; }
 			.white .btn-danger { color: #d9534f; }
 
-			.center-vertically {
-				position: relative !important;
-				top: 50% !important;
-				-webkit-transform: translateY(-50%) !important;
-				-ms-transform: translateY(-50%) !important;
-				transform: translateY(-50%) !important;
+
+			.btn-block { max-width: 500px; margin: 0 auto; }
+
+			.area {
+				color: #ccc;
+				text-align: center;
+				background: #fafafa;
+				overflow: hidden;
+			}
+			.area h3 {
+				line-height: 300px;
+			}
+			a{
+				transition: all 0.3s ease;
+				text-decoration: none !important;
 			}
 		</style>
 	</head>
 	<body class="text-center">
 
-		<div class="container center-vertically">
-			<header>
-				<h1>Ripple.js</h1>
-			</header>
-			<hr />
-			<a href="#" class="btn btn-default btn-lg">Default</a>
-			<a href="#" class="btn btn-primary btn-lg">Primary</a>
-			<a href="#" class="btn btn-success btn-lg">Success</a>
-			<a href="#" class="btn btn-warning btn-lg">Warnings</a>
-			<a href="#" class="btn btn-danger btn-lg">Danger</a>
-			<hr />
-			<div class="white">
-				<a href="#" class="btn btn-success btn-lg">Success</a>
-				<a href="#" class="btn btn-warning btn-lg">Warnings</a>
-				<a href="#" class="btn btn-danger btn-lg">Danger</a>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<header>
+						<h1>Ripple.js</h1>
+					</header>
+					<hr />
+					<a href="#" class="btn btn-default btn-lg">Default</a>
+					<a href="#" class="btn btn-primary btn-lg">Primary</a>
+					<a href="#" class="btn btn-success btn-lg">Success</a>
+					<a href="#" class="btn btn-warning btn-lg">Warnings</a>
+					<a href="#" class="btn btn-danger btn-lg">Danger</a>
+					<hr />
+					<div class="white">
+						<a href="#" class="btn btn-success btn-lg">Success</a>
+						<a href="#" class="btn btn-warning btn-lg">Warnings</a>
+						<a href="#" class="btn btn-danger btn-lg">Danger</a>
+					</div>
+					<hr />
+					<div class="area">
+						<h3>Area</h3>
+					</div>
+					<hr />
+					<a href="#" class="btn btn-primary btn-block">Default</a>
+					<a href="#" class="btn btn-primary btn-block" data-easing="ease-in-out">Easing</a>
+					<a href="#" class="btn btn-primary btn-block" data-duration="3">Duration</a>
+					<a href="#" class="btn btn-primary btn-block" data-opacity="1">Opacity</a>
+					<a href="#" class="btn btn-primary btn-block" data-color="limegreen">Color</a>
+				</div>
 			</div>
 		</div>
+
+		<hr />
+		<a href="#" class="text-muted">
+			<small>Carefully Crapted by jakiestfu</small>
+		</a>
+		<hr />
 
 		<a href="https://github.com/jakiestfu/Ripple.js"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/52760788cde945287fbb584134c4cbc2bc36f904/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f77686974655f6666666666662e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_white_ffffff.png"></a>
 
@@ -74,7 +101,11 @@
 
 			$(function() {
 
-				$.ripple('.btn');
+				$(document).on('click', '[href="#"]', function(e) { e.preventDefault(); })
+
+				$.ripple('.btn, .area', {
+					multi: true
+				});
 			});
 
 		</script>

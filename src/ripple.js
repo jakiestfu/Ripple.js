@@ -4,32 +4,48 @@
         var self = this;
 
         self.defaults = {
+            on: 'mousedown',
+
             opacity: 0.4,
-            color: "auto"
+            color: "auto",
+            multi: false,
+
+            duration: 0.7,
+            easing: 'linear'
         };
 
-        var settings = $.extend({}, self.defaults, options);
+        self.defaults = $.extend({}, self.defaults, options);
 
-        $(document).on('click', selector, function(e) {
+        $(document).on(self.defaults.on, selector, function(e) {
 
             var $this = $(this);
             var $ripple;
+            var settings;
 
             $this.addClass('has-ripple');
 
+            // This instances settings
+            settings = $.extend({}, self.defaults, $this.data());
+
             // Create the ripple element
-            if ($this.find(".ripple").length === 0) {
+            if ( settings.multi || (!settings.multi && $this.find(".ripple").length === 0) ) {
                 $ripple = $("<span></span>").addClass("ripple");
                 $ripple.appendTo($this);
 
+                // Set the color and opacity
                 var color = (settings.color == "auto") ? $this.css('color') : settings.color;
                 $ripple.css({
+                    animationDuration: (settings.duration).toString() + 's',
+                    animationTimingFunction: settings.easing,
                     background: color,
                     opacity: settings.opacity
                 });
             }
 
-            $ripple = $this.find(".ripple");
+            // Ensure we always have the ripple element
+            if(!settings.multi) {
+                $ripple = $this.find(".ripple");
+            }
 
             // Kill animation
             $ripple.removeClass("animate");
@@ -47,6 +63,17 @@
             var x = e.pageX - $this.offset().left - $ripple.width() / 2;
             var y = e.pageY - $this.offset().top - $ripple.height() / 2;
 
+            /**
+             * We want to delete the ripple elements if we allow multiple so we dont sacrifice any page
+             * performance. We don't do this on single ripples because once it has rendered, we only
+             * need to trigger paints thereafter.
+             */
+            if(settings.multi) {
+                $ripple.one('animationend webkitAnimationEnd oanimationend MSAnimationEnd', function() {
+                    $(this).remove();
+                });
+            }
+
             // Set position and animate
             $ripple.css({
                 top: y + 'px',
@@ -55,5 +82,3 @@
         });
     };
 })(jQuery);
-
-$.ripple(".btn-ripple");
