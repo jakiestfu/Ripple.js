@@ -1,7 +1,7 @@
 {
     "name": "Ripple.js",
     "author": "Jacob Kelley",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "repository": {
         "type": "git",
         "url": "https://github.com/jakiestfu/Ripple.js.git"

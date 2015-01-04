@@ -43,6 +43,10 @@ module.exports = function(grunt) {
                 files: 'src/*.js',
                 tasks: ['jshint', 'uglify']
             },
+            styles: {
+                files: 'src/*.css',
+                tasks: ['cssmin']
+            },
             manifests: {
                 files: ['package.json'],
                 tasks: ['sync_versions']
