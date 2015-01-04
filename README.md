@@ -19,9 +19,20 @@ Include jQuery, the ripple.css, and ripple.js into your page. Then upon initiali
 
 ```javascript
 $.ripple(".btn", {
+	on: 'mousedown', // The event to trigger a ripple effect
+
+	opacity: 0.4, // The opacity of the ripple
 	color: "auto", // Set the background color. If set to "auto", it will use the text color
-	opacity: 0.5 // The opacity of the ripple
+	multi: false, // Allow multiple ripples per element
+
+	duration: 0.7, // The duration of the ripple
+	easing: 'linear' // The CSS3 easing function of the ripple
 });
+```
+
+Elements can be overridden with their own default options:
+```html
+<a href="#" data-duration="5" data-color="red" data-opacity="1">Slow Red Ripple</a>
 ```
 
 ## Building
@@ -30,3 +41,11 @@ $ npm install
 $ npm run-script build
 $ npm run-script build-watch # To watch assets
 ```
+
+## Caveats
+* The element selected to contain a ripple will gain the following CSS properties:
+    * `position: relative`
+    * `transform: translate3d(0,0,0)`
+
+## License
+MIT
