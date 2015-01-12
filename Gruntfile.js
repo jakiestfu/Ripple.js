@@ -29,6 +29,7 @@ module.exports = function(grunt) {
         uglify: {
             options: {
                 banner: "/* " + banner + " */\n",
+                footer: "$.ripple.version = \"<%= pkg.version %>\";",
                 preserveComments: 'some'
             },
             main: {
