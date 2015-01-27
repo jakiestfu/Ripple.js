@@ -1,6 +1,26 @@
 {
 	"name": "Ripple.js",
-	"author": "Jacob Kelley",
 	"version": "1.2.0",
-	"main": "dist/ripple.min.js"
+	"homepage": "http://jakiestfu.github.io/Ripple.js/demo",
+	"authors": [
+		"Jacob Kelley <jakie8@gmail.com>"
+	],
+	"description": "Adds Material style ripple to anything",
+	"main": [
+		"src/ripple.js",
+		"src/ripple.css"
+	],
+	"keywords": [
+		"material",
+		"ripple",
+		"animation"
+	],
+	"license": "MIT",
+		"ignore": [
+		"**/.*",
+		"node_modules",
+		"bower_components",
+		"test",
+		"tests"
+	]
 }
