@@ -10,9 +10,21 @@ module.exports = function(grunt) {
 
         pkg: pkg,
 
+        concat: {
+            options: {
+                banner: "/*! " + banner + " */\n\n"
+            },
+            copy: {
+                files: {
+                    'dist/ripple.js': ["src/ripple.js"],
+                    'dist/ripple.css': ["src/ripple.css"]
+                }
+            }
+        },
+
         cssmin: {
             options: {
-                banner: "/* " + banner + " */",
+                banner: "/*! " + banner + " */",
                 preserveComments: 'some'
             },
             main: {
@@ -28,7 +40,7 @@ module.exports = function(grunt) {
 
         uglify: {
             options: {
-                banner: "/* " + banner + " */\n",
+                banner: "/*! " + banner + " */\n",
                 footer: "$.ripple.version = \"<%= pkg.version %>\";",
                 preserveComments: 'some'
             },
@@ -55,22 +67,12 @@ module.exports = function(grunt) {
         }
     });
 
+    grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-watch');
 
-    // Custom task
-    grunt.registerTask('sync_versions', 'Keeps versions in sync between NPM and Bower', function(){
-        var bower = {
-            name: pkg.name,
-            author: pkg.author,
-            version: pkg.version,
-            main: 'dist/ripple.min.js'
-        };
-        fs.writeFileSync('bower.json', JSON.stringify(bower, null, "\t"));
-    });
-
-    grunt.registerTask('default', ['jshint', 'uglify', 'cssmin', 'sync_versions']);
-    grunt.registerTask('develop', ['jshint', 'uglify', 'cssmin', 'sync_versions', 'watch']);
+    grunt.registerTask('default', ['jshint', 'concat', 'uglify', 'cssmin']);
+    grunt.registerTask('develop', ['jshint', 'concat', 'uglify', 'cssmin', 'watch']);
 };
