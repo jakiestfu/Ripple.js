@@ -60,6 +60,6 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-watch');
 
-    grunt.registerTask('default', ['jshint', 'uglify', 'cssmin', 'sync_versions']);
-    grunt.registerTask('develop', ['jshint', 'uglify', 'cssmin', 'sync_versions', 'watch']);
+    grunt.registerTask('default', ['jshint', 'uglify', 'cssmin']);
+    grunt.registerTask('develop', ['jshint', 'uglify', 'cssmin', 'watch']);
 };
