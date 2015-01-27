@@ -10,9 +10,21 @@ module.exports = function(grunt) {
 
         pkg: pkg,
 
+        concat: {
+            options: {
+                banner: "/*! " + banner + " */\n\n"
+            },
+            copy: {
+                files: {
+                    'dist/ripple.js': ["src/ripple.js"],
+                    'dist/ripple.css': ["src/ripple.css"]
+                }
+            }
+        },
+
         cssmin: {
             options: {
-                banner: "/* " + banner + " */",
+                banner: "/*! " + banner + " */",
                 preserveComments: 'some'
             },
             main: {
@@ -28,7 +40,7 @@ module.exports = function(grunt) {
 
         uglify: {
             options: {
-                banner: "/* " + banner + " */\n",
+                banner: "/*! " + banner + " */\n",
                 footer: "$.ripple.version = \"<%= pkg.version %>\";",
                 preserveComments: 'some'
             },
@@ -55,11 +67,12 @@ module.exports = function(grunt) {
         }
     });
 
+    grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-watch');
 
-    grunt.registerTask('default', ['jshint', 'uglify', 'cssmin']);
-    grunt.registerTask('develop', ['jshint', 'uglify', 'cssmin', 'watch']);
+    grunt.registerTask('default', ['jshint', 'concat', 'uglify', 'cssmin']);
+    grunt.registerTask('develop', ['jshint', 'concat', 'uglify', 'cssmin', 'watch']);
 };

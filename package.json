@@ -1,23 +1,24 @@
 {
-    "name": "Ripple.js",
-    "author": "Jacob Kelley",
-    "version": "1.2.1",
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/jakiestfu/Ripple.js.git"
-    },
-    "scripts": {
-        "bower": "./node_modules/bower/bin/bower install",
-        "build": "./node_modules/grunt-cli/bin/grunt",
-        "build-watch": "./node_modules/grunt-cli/bin/grunt develop"
-    },
-    "devDependencies": {
-        "bower": "*",
-        "grunt": "~0.4.1",
-        "grunt-cli": "~0.1.9",
-        "grunt-contrib-watch": "~0.5.3",
-        "grunt-contrib-uglify": "0.2.5",
-        "grunt-contrib-jshint": "0.8.0",
-        "grunt-contrib-cssmin": "0.10.0"
-    }
+  "name": "Ripple.js",
+  "author": "Jacob Kelley",
+  "version": "1.2.1",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jakiestfu/Ripple.js.git"
+  },
+  "scripts": {
+    "bower": "./node_modules/bower/bin/bower install",
+    "build": "./node_modules/grunt-cli/bin/grunt",
+    "build-watch": "./node_modules/grunt-cli/bin/grunt develop"
+  },
+  "devDependencies": {
+    "bower": "*",
+    "grunt": "~0.4.1",
+    "grunt-cli": "~0.1.9",
+    "grunt-contrib-concat": "^0.5.0",
+    "grunt-contrib-cssmin": "0.10.0",
+    "grunt-contrib-jshint": "0.8.0",
+    "grunt-contrib-uglify": "0.2.5",
+    "grunt-contrib-watch": "~0.5.3"
+  }
 }
