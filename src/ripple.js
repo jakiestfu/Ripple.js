@@ -1,4 +1,4 @@
-;(function($){
+;(function($, document, Math){
     $.ripple = function(selector, options) {
 
         var self = this;
@@ -132,4 +132,4 @@
 
         $(document).on(self.defaults.on, self.selector, Trigger);
     };
-})(jQuery);
+})(jQuery, document, Math);
