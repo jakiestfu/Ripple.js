@@ -22,7 +22,7 @@
     background: #fff;
     opacity: 1;
 }
-.ripple.animate {
+.ripple-animate {
     -webkit-animation: ripple;
     -moz-animation: ripple;
     -ms-animation: ripple;

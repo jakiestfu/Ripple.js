@@ -100,7 +100,7 @@
 
             // Kill animation
             _log('Destroy: Ripple Animation');
-            $ripple.removeClass("animate");
+            $ripple.removeClass("ripple-animate");
 
 
             // Retrieve coordinates
@@ -127,7 +127,7 @@
             $ripple.css({
                 top: y + 'px',
                 left: x + 'px'
-            }).addClass("animate");
+            }).addClass("ripple-animate");
         };
 
         $(document).on(self.defaults.on, self.selector, Trigger);
