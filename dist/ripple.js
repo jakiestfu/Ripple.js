@@ -1,3 +1,7 @@
+/*! Ripple.js v1.2.1
+ * The MIT License (MIT)
+ * Copyright (c) 2014 Jacob Kelley */
+
 ;(function($, document, Math){
     $.ripple = function(selector, options) {
 

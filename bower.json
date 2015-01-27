@@ -6,8 +6,8 @@
   ],
   "description": "Adds Material style ripple to anything",
   "main": [
-    "src/ripple.js",
-    "src/ripple.css"
+    "dist/ripple.js",
+    "dist/ripple.css"
   ],
   "keywords": [
     "material",
