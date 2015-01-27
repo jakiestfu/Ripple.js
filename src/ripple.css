@@ -2,8 +2,6 @@
     position: relative;
     overflow: hidden;
     -webkit-transform: translate3d(0,0,0);
-    -moz-transform: translate3d(0,0,0);
-    -ms-transform: translate3d(0,0,0);
     -o-transform: translate3d(0,0,0);
     transform: translate3d(0,0,0);
 }
@@ -14,26 +12,16 @@
     border-radius: 50%;
 
     -webkit-transform: scale(0);
-    -moz-transform: scale(0);
-    -ms-transform: scale(0);
     -o-transform: scale(0);
     transform: scale(0);
 
     background: #fff;
     opacity: 1;
 }
-.ripple.animate {
+.ripple-animate {
     -webkit-animation: ripple;
-    -moz-animation: ripple;
-    -ms-animation: ripple;
     -o-animation: ripple;
     animation: ripple;
-}
-@keyframes ripple {
-    100% {
-        opacity: 0;
-        transform: scale(2);
-    }
 }
 @-webkit-keyframes ripple {
     100% {
@@ -42,24 +30,16 @@
         transform: scale(2);
     }
 }
-@-moz-keyframes ripple {
-    100% {
-        opacity: 0;
-        -moz-transform: scale(2);
-        transform: scale(2);
-    }
-}
-@-ms-keyframes ripple {
-    100% {
-        opacity: 0;
-        -ms-transform: scale(2);
-        transform: scale(2);
-    }
-}
 @-o-keyframes ripple {
     100% {
         opacity: 0;
         -o-transform: scale(2);
+        transform: scale(2);
+    }
+}
+@keyframes ripple {
+    100% {
+        opacity: 0;
         transform: scale(2);
     }
 }
