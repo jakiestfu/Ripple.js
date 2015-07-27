@@ -3,6 +3,8 @@ Ripple.js
 
 Adds Material style ripple to buttons
 
+#### <a href="https://jakiestfu.github.com/Ripple.js/demo/">View Demo</a>
+
 ## Installation
 ```html
 <link href="stylesheet" type="text/css" href="ripple.min.css">
